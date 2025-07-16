@@ -1,37 +1,16 @@
 # 👕 Fashion MNIST Classifier
 
-Ce projet consiste à **réentraîner un modèle MobileNetV3 sur le jeu de données Fashion-MNIST**, puis à le déployer via une **API FastAPI**. L’objectif est de proposer une classification d’images d’articles vestimentaires en 10 catégories.
+Ce projet consiste à **réentraîner un modèle MobileNetV3-Small sur le jeu de données Fashion-MNIST**, puis à le déployer via une **API FastAPI**. L’objectif est de classifier des images d’articles vestimentaires en 10 catégories.
 
-Le modèle utilise l’architecture **MobileNetV3-Small**, fine-tunée sur Fashion-MNIST (60 000 images en niveaux de gris).  
-Il est ensuite mis à disposition via une API REST, pouvant recevoir une **URL d’image** en entrée et retourner la classe prédite.
+Le modèle est fine-tuné sur Fashion-MNIST (60 000 images 28x28 en niveaux de gris).  
+Il est exposé via une API REST pouvant recevoir une **URL d’image** en entrée et retourner la classe prédite.
 
 ---
 
-## 🚀 Lancer le projet en local
-
-### 1. Cloner le projet
+## Accéder à l'API publique :
 
 ```bash
-git clone https://github.com/A440940/fashion-mnist-classifier.git
-cd fashion-mnist-classifier
-```
-
-### 2. Construire l'image docker à partir du DockerFile
-
-```bash
-docker build -t fashion_classifier:1.0.0 .
-```
-
-### 3. Lancer un conteneur
-
-```bash
-docker build -t fashion_classifier:1.0.0 .
-```
-
-### 3. Accéder à l'API
-
-```bash
-http://localhost:8080/docs
+http://35.180.119.212/docs
 ```
 
 Exemples d'URL valides (issues du jeu de test) :
@@ -52,3 +31,30 @@ En effet, le jeu d'entraînement Fashion-MNIST contient des images très normali
 - pas de couleurs, pas de bruits de fond
 
 Pour des résultats fiables, utilisez de préférence des images issues du dataset ou respectant ce format.
+
+## Lancer le projet en local
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/A440940/fashion-mnist-classifier.git
+cd fashion-mnist-classifier
+```
+
+### 2. Construire l'image docker à partir du DockerFile
+
+```bash
+docker build -t fashion_classifier:1.0.0 .
+```
+
+### 3. Lancer un conteneur
+
+```bash
+docker run -d -p 8080:80 fashion_classifier
+```
+
+### 3. Accéder à l'API
+
+```bash
+http://localhost:8080/docs
+```
