@@ -22,7 +22,7 @@ Le modèle MobileNetV3 a été choisi pour sa légèreté et son efficacité, ce
 
 Cette matrice de confusion illustre la qualité des prédictions du modèle pour chacune des 10 classes :
 
-![Matrice de confusion](notebooks\confusion_matrix.png)
+![Matrice de confusion](notebooks/confusion_matrix.png)
 
 ## 4. Structure de l'API FastAPI
 
