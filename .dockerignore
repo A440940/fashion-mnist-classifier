@@ -1,5 +1,5 @@
 .git 
 .gitignore
 notebooks/
-__pycache__/
+**/__pycache__/
 README.md
