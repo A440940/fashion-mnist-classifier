@@ -1,0 +1,9 @@
+torch
+torchvision
+pandas
+matplotlib
+scikit-learn
+fastapi
+requests
+pillow
+uvicorn
